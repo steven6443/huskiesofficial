@@ -1,0 +1,200 @@
+{
+  "$schema": "https://claude.com/schemas/design-system-spec/v1",
+  "name": "HuskiesOfficial",
+  "version": "1.0.0",
+  "description": "Design system for HuskiesOfficial — the world's largest Siberian Husky community. An Arch Essentials brand. Aesthetic: arctic expedition. Night sky, aurora, snow ridge, and a heritage badge emblem. Warm, rugged, outdoorsy — never corporate, never cutesy.",
+  "brand": {
+    "parent": "Arch Essentials LLC",
+    "domain": "https://www.huskiesofficial.com",
+    "voice": {
+      "personality": ["warm", "direct", "wry", "in-on-the-joke", "expert but never lecturing"],
+      "rules": [
+        "Speak as a member of the pack, not as a company addressing customers.",
+        "Humor comes from shared husky experience (the screaming, the shedding, the escapes) — never from mocking the dogs or owners.",
+        "Be honest about the breed's difficulty. Trust is the moat; never oversell husky ownership.",
+        "Community first, monetization second. Never let a sales voice override the community voice."
+      ],
+      "avoid": ["corporate jargon", "generic pet-brand cheerfulness", "clickbait", "exclamation-heavy copy"]
+    }
+  },
+
+  "color": {
+    "primitives": {
+      "night":        { "value": "#0A1322", "description": "Arctic night. Primary background." },
+      "night-2":      { "value": "#0E1B30", "description": "Raised surface. Cards, panels." },
+      "aurora-teal":  { "value": "#3EE6C4", "description": "Primary accent. CTAs, highlights, key words." },
+      "aurora-violet":{ "value": "#8B6CFF", "description": "Secondary accent. Aurora bands, 'coming soon' states." },
+      "husky-blue":   { "value": "#5FA8E6", "description": "The blue eye. Links, gradients." },
+      "husky-amber":  { "value": "#E8A33D", "description": "The amber eye. Pairs with husky-blue; use sparingly, always as the counterpart." },
+      "bone":         { "value": "#C8BEAF", "description": "From the logo's outline. Brand neutral — eyebrow text, rules, borders." },
+      "bone-dark":    { "value": "#8A7F6D", "description": "Bone darkened for text on light backgrounds." },
+      "ice":          { "value": "#EAF4F7", "description": "Primary text on dark. Snow." },
+      "snow-gray":    { "value": "#93A7BC", "description": "Muted/secondary text on dark." },
+      "ink":          { "value": "#132238", "description": "Primary text on light backgrounds." },
+      "paper":        { "value": "#F7FAFC", "description": "Light background (print, PDF interiors)." },
+      "teal-dark":    { "value": "#0E9C82", "description": "Teal darkened for text on light backgrounds (contrast-safe)." },
+      "line":         { "value": "rgba(147,167,188,0.16)", "description": "Hairline borders on dark." }
+    },
+    "semantic": {
+      "background":        "night",
+      "surface":           "night-2",
+      "text-primary":      "ice",
+      "text-muted":        "snow-gray",
+      "text-eyebrow":      "bone",
+      "accent-primary":    "aurora-teal",
+      "accent-secondary":  "aurora-violet",
+      "link":              "husky-blue",
+      "border":            "line"
+    },
+    "signature-pair": {
+      "description": "Heterochromia. The blue eye and the amber eye. This is the ownable brand detail — when both appear together they must be visually equal partners. Never use amber alone as an accent.",
+      "colors": ["husky-blue", "husky-amber"]
+    },
+    "rules": [
+      "Default to dark mode. The brand lives on night (#0A1322).",
+      "Aurora-teal is the ONLY color used for primary CTAs. Do not introduce new accent colors.",
+      "Bone is the connective neutral — it ties the logo's outline into the UI. Use it for eyebrows, rules, and secondary borders.",
+      "Never place the dark-wordmark logo on a dark background, or the light-wordmark logo on a light background. See logo.usage.",
+      "Text on night must meet 4.5:1 contrast. ice = 14.3:1, snow-gray = 6.4:1, bone = 9.1:1. teal-dark and bone-dark exist for light backgrounds."
+    ]
+  },
+
+  "typography": {
+    "families": {
+      "display": {
+        "value": "'Bricolage Grotesque', sans-serif",
+        "weights": [400, 600, 800],
+        "source": "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800",
+        "usage": "Headlines, section titles, stats, buttons, logo wordmark. Its slightly-imperfect grotesque character matches the rugged brand tone."
+      },
+      "body": {
+        "value": "'Inter', system-ui, sans-serif",
+        "weights": [400, 500, 600],
+        "source": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600",
+        "usage": "All body copy, labels, form fields."
+      }
+    },
+    "scale": {
+      "h1":       { "size": "clamp(2.4rem, 6.5vw, 4.2rem)", "family": "display", "weight": 800, "line-height": 1.06, "letter-spacing": "-0.02em" },
+      "h2":       { "size": "clamp(1.7rem, 4.2vw, 2.4rem)", "family": "display", "weight": 800, "line-height": 1.15, "letter-spacing": "-0.01em" },
+      "h3":       { "size": "1.05rem", "family": "display", "weight": 600 },
+      "body":     { "size": "1rem", "family": "body", "weight": 400, "line-height": 1.6 },
+      "body-sm":  { "size": "0.9rem", "family": "body", "weight": 400 },
+      "eyebrow":  { "size": "0.78rem", "family": "body", "weight": 600, "letter-spacing": "0.14em", "text-transform": "uppercase", "color": "bone" },
+      "stat":     { "size": "clamp(1.9rem, 4.5vw, 2.6rem)", "family": "display", "weight": 800 },
+      "label":    { "size": "0.82rem", "letter-spacing": "0.1em", "text-transform": "uppercase", "color": "bone" }
+    },
+    "rules": [
+      "Gradient text (linear-gradient teal -> husky-blue -> violet, background-clip:text) is reserved for a single emphasized word in the H1. Never more than once per page."
+    ]
+  },
+
+  "space": {
+    "unit": "4px",
+    "scale": { "xs": "8px", "sm": "12px", "md": "18px", "lg": "26px", "xl": "44px", "2xl": "72px" },
+    "section-padding": "72px 0",
+    "container-max": "1060px",
+    "container-gutter": "22px"
+  },
+
+  "radius": { "sm": "8px", "md": "10px", "lg": "14px", "pill": "99px" },
+
+  "elevation": {
+    "card": "none — use 1px border (line) on surface instead of shadow",
+    "cta-hover": "0 6px 24px rgba(62,230,196,0.25)"
+  },
+
+  "motion": {
+    "aurora": {
+      "description": "The signature element. Blurred radial gradients (teal, violet, husky-blue) drifting behind the hero.",
+      "keyframes": "translateX(-4%) skewY(-3deg) -> translateX(5%) skewY(2deg) scaleY(1.15)",
+      "duration": "16s / 22s (two layers, alternating)",
+      "easing": "ease-in-out infinite alternate"
+    },
+    "reveal": { "description": "Scroll-triggered fade + 22px rise", "duration": "0.6s", "easing": "ease" },
+    "rules": ["All motion must respect prefers-reduced-motion: reduce. Disable aurora drift and reveals."]
+  },
+
+  "logo": {
+    "concept": "A heritage badge: a Siberian Husky head with heterochromatic eyes (blue + amber), flanked by the pack, under a mountain, above a pine treeline. Encircled by a bone ring.",
+    "assets": {
+      "badge":            { "file": "huskiesofficial-badge.png", "description": "Circular emblem, no text. Transparent. Universal — works on any background.", "min-size": "48px" },
+      "mark":             { "file": "huskiesofficial-mark.png", "description": "Small badge for nav headers and footers.", "min-size": "32px" },
+      "lockup-dark-bg":   { "file": "huskiesofficial-lockup-DARK-BG.png", "description": "Badge + WHITE wordmark. Use ONLY on dark backgrounds. Contrast 13.1:1 on night." },
+      "lockup-light-bg":  { "file": "huskiesofficial-lockup-LIGHT-BG.png", "description": "Badge + DARK wordmark. Use ONLY on light backgrounds. Contrast 15.7:1 on white." },
+      "avatar":           { "file": "avatar-facebook-instagram.png", "description": "512px, night background. Circle-crop safe: 0px loss when cropped to a circle by Facebook/Instagram." },
+      "favicon":          { "files": ["favicon.ico", "favicon-16.png", "favicon-32.png", "favicon-48.png", "favicon-64.png", "favicon-180.png", "favicon-192.png", "favicon-512.png"] },
+      "og-image":         { "file": "og-image.jpg", "description": "1200x630. Link preview for Facebook/Instagram shares." }
+    },
+    "usage": {
+      "must": [
+        "Choose the lockup by BACKGROUND, not by preference. Dark bg -> lockup-dark-bg. Light bg -> lockup-light-bg.",
+        "Maintain clear space equal to 8% of the logo's width on all sides.",
+        "For any circular crop (social avatars), use the avatar asset — it is padded to survive the crop with zero loss."
+      ],
+      "never": [
+        "Never recolor the logo.",
+        "Never stretch or change its aspect ratio.",
+        "Never place the dark-wordmark lockup on a dark background (contrast fails at 2.1:1).",
+        "Never crop the badge tighter — the ears and chest ruff span the full circle and clipping them destroys breed recognition.",
+        "Never use the badge below 48px; use the favicon assets instead."
+      ]
+    },
+    "format-note": "Current assets are raster PNG. Vectorize before any print/merch run — do not upscale the PNG."
+  },
+
+  "components": {
+    "button-primary": {
+      "background": "linear-gradient(92deg, aurora-teal, husky-blue)",
+      "color": "#07101d",
+      "font": "display 600, 1rem",
+      "padding": "14px 22px",
+      "radius": "md",
+      "hover": "translateY(-1px) + cta-hover shadow"
+    },
+    "card": {
+      "background": "night-2",
+      "border": "1px solid line",
+      "radius": "lg",
+      "padding": "28px 24px",
+      "hover": "border-color rgba(62,230,196,0.45), translateY(-3px)"
+    },
+    "card-coming-soon": {
+      "extends": "card",
+      "border": "1px dashed rgba(139,108,255,0.4)",
+      "eyebrow-color": "aurora-violet",
+      "usage": "Products not yet launched. Includes a 'Notify me' button that fires a GA4 + Pixel event for demand validation."
+    },
+    "input": {
+      "background": "night",
+      "border": "1px solid line",
+      "radius": "md",
+      "padding": "13px 15px",
+      "focus": "2px solid aurora-teal outline"
+    },
+    "stat-strip": {
+      "description": "Social proof. Big display numbers with bone uppercase labels beneath.",
+      "content": ["143K Page followers", "105K Group members", "190+ Countries repped"]
+    },
+    "eyebrow-pill": {
+      "border": "1px solid rgba(200,190,175,0.38)",
+      "color": "bone",
+      "radius": "pill",
+      "padding": "6px 14px"
+    }
+  },
+
+  "patterns": {
+    "hero": "Aurora background + starfield -> badge logo -> eyebrow pill -> H1 (one gradient word) -> subhead -> email capture card. Single CTA above the fold.",
+    "email-capture": "Always lead with the lead magnet (the free Husky Owner's Cheat Sheet), never with 'subscribe to our newsletter'. Include a hidden `source` field populated from ?utm_source= for channel attribution.",
+    "monetization-modules": "Revenue sections (e.g. affiliate 'Gear the Pack Trusts') are built but hidden behind a body class flag (affiliate-off / affiliate-on). Build dormant, activate later — never rebuild.",
+    "reserved-routes": ["/kit", "/shop", "/calendar", "/rescue", "/meetups", "/partners"]
+  },
+
+  "accessibility": {
+    "contrast-minimum": "4.5:1 body, 3:1 large text",
+    "reduced-motion": "required",
+    "focus-visible": "2px solid ice, 2px offset",
+    "mobile-first": "80%+ of traffic arrives via the Facebook in-app browser on mobile. Test there first."
+  }
+}
