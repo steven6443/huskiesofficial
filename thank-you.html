@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>You're in the pack — HuskiesOfficial</title>
+<meta name="description" content="Welcome to the pack. Download your free Husky Owner's Cheat Sheet and join 250,000 husky people." />
+<meta name="robots" content="noindex" />
+<link rel="icon" href="assets/favicon.ico" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link href="huskies.css" rel="stylesheet" />
+<style>
+.ty-hero{position:relative;min-height:100vh;display:flex;flex-direction:column;overflow:hidden;background:var(--night)}
+.ty-main{position:relative;z-index:2;flex:1;display:flex;align-items:center;justify-content:center;width:100%;padding:120px 0 64px}
+.ty-card{max-width:600px;margin:0 auto;text-align:center}
+.ty-seal{width:352px;height:352px;margin:0 auto -8px;display:block}
+.ty-card h1{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:58px;line-height:1;letter-spacing:-.035em;margin-bottom:18px}
+.ty-card h1 .grad{background:linear-gradient(100deg,var(--husky-blue),var(--ice-cyan) 55%,var(--ice-violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+.ty-lede{font-size:19px;line-height:1.5;color:var(--ice);max-width:480px;margin:0 auto 34px}
+.ty-lede strong{color:#fff}
+.ty-download{display:inline-flex;align-items:center;gap:11px;font-family:"Bricolage Grotesque",sans-serif;font-size:17px;font-weight:600;color:var(--night)!important;background:var(--husky-blue);border:none;border-radius:var(--r-pill);padding:17px 32px;cursor:pointer;transition:transform .12s,background .15s,box-shadow .15s}
+.ty-download:hover{transform:translateY(-1px);background:var(--ice-cyan);box-shadow:0 14px 34px -12px oklch(0.68 0.11 245 / .7)}
+.ty-download svg{width:20px;height:20px}
+.ty-fine{font-size:13px;color:var(--snow-gray);margin-top:16px}
+.ty-next{border-top:1px solid var(--line);margin-top:52px;padding-top:40px}
+.ty-next .k{font-family:"Bricolage Grotesque",sans-serif;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--husky-blue);margin-bottom:22px}
+.ty-links{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.ty-link{display:flex;flex-direction:column;gap:6px;padding:22px 18px;background:var(--night-2);border:1px solid var(--line);border-radius:var(--r-card);transition:border-color .18s,transform .12s}
+.ty-link:hover{border-color:var(--line-2);transform:translateY(-3px)}
+.ty-link .lt{font-family:"Bricolage Grotesque",sans-serif;font-size:16px;font-weight:800;color:var(--ice)}
+.ty-link .ls{font-size:13px;color:var(--snow-gray)}
+@media(max-width:900px){.ty-card h1{font-size:44px}.ty-links{grid-template-columns:1fr}.nav-links a:not(.nav-cta){display:none}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="wrap">
+    <a href="/" class="brand"><img class="brand-mark" src="assets/huskiesofficial-mark.png" alt="" /><span class="brand-text">HUSKIES<span class="official">OFFICIAL</span></span></a>
+    <div class="nav-links">
+      <a href="/#community">Community</a>
+      <a href="/#soon">Coming Soon</a>
+      <a href="/" class="nav-cta">Back home</a>
+    </div>
+  </div>
+</nav>
+
+<!-- THANK YOU HERO -->
+<header class="ty-hero">
+  <div class="sky">
+    <div class="stars"></div>
+    <div class="aurora a1"></div>
+    <div class="aurora a2"></div>
+    <div class="aurora a3"></div>
+    <div class="zebra"></div>
+  </div>
+  <div class="hero-scrim"></div>
+  <div class="ty-main">
+    <div class="wrap">
+      <div class="ty-card">
+        <img class="ty-seal" src="assets/huskiesofficial-badge.png" alt="HuskiesOfficial badge" />
+        <span class="eyebrow" style="display:block;margin-bottom:16px">The pack runs north</span>
+        <h1>You're <span class="grad">in</span>.</h1>
+        <p class="ty-lede">Welcome to the pack. Your <strong>Husky Owner's Cheat Sheet</strong> is ready — grab it right here.</p>
+        <a class="ty-download" href="assets/Husky-Owners-Cheat-Sheet.pdf" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12" /><path d="m7 10 5 5 5-5" /><path d="M5 21h14" /></svg>
+          Download the Cheat Sheet
+        </a>
+        <p class="ty-fine">Trouble downloading? Tap the button again, or email hello@huskiesofficial.com and we'll send it right over.</p>
+
+        <div class="ty-next">
+          <div class="k">While you're here — meet the pack</div>
+          <div class="ty-links">
+            <a class="ty-link" href="https://www.facebook.com/groups/huskyworldofficial" target="_blank" rel="noopener">
+              <span class="lt">Join the group</span>
+              <span class="ls">108k husky people, one chat →</span>
+            </a>
+            <a class="ty-link" href="https://www.facebook.com/HuskiesOfficial" target="_blank" rel="noopener">
+              <span class="lt">Like the page</span>
+              <span class="ls">143k following the daily pack →</span>
+            </a>
+            <a class="ty-link" href="https://www.instagram.com/huskies_official" target="_blank" rel="noopener">
+              <span class="lt">Follow on IG</span>
+              <span class="ls">The best of the pack, daily →</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <a href="/" class="brand"><img class="brand-mark" src="assets/huskiesofficial-mark.png" alt="" /><span class="brand-text">HUSKIES<span class="official">OFFICIAL</span></span></a>
+    <div class="footer-nav">
+      <a href="/#cheatsheet">Cheat Sheet</a>
+      <a href="/#community">Community</a>
+      <a href="/#soon">Coming Soon</a>
+    </div>
+    <div class="footer-copy">© 2026 HuskiesOfficial · An Arch Essentials brand · Made with 🐾 by husky people, for husky people</div>
+  </div>
+</footer>
+
+</body>
+</html>
