@@ -7,7 +7,7 @@
 <meta name="description" content="The world's largest Siberian Husky community. Join 250,000+ husky people and get the free Husky Owner's Cheat Sheet — shedding season, escape-proofing, and the vocalization decoder." />
 <meta property="og:title" content="HuskiesOfficial — 250,000+ Husky People Strong" />
 <meta property="og:description" content="The pack has a home base. Get the free Husky Owner's Cheat Sheet and join the world's largest husky community." />
-<meta property="og:image" content="assets/og-image.jpg" />
+<meta property="og:image" content="https://www.huskiesofficial.com/assets/og-image.jpg" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.huskiesofficial.com/" />
 <meta name="twitter:card" content="summary_large_image" />
@@ -159,17 +159,17 @@
     <div class="pack-grid">
       <div class="den">
         <span class="den-tag">Most active · start here</span>
-        <div class="den-photo"><img src="assets/huskiesofficial-group-cover.png" alt="A husky family — two adults and six puppies — posed together" loading="lazy" decoding="async" style="object-position:center 50%" /></div>
+        <div class="den-photo"><img src="assets/huskiesofficial-group-cover.jpg" alt="A husky family — two adults and six puppies — posed together" loading="lazy" decoding="async" style="object-position:center 50%" /></div>
         <div class="den-body"><h3>The Facebook Group</h3><p>108,000+ owners sharing daily wins, disasters, questions, and the world's most dramatic dogs. Where the pack actually lives.</p><a href="https://facebook.com/groups/huskyworldofficial" target="_blank" rel="noopener" class="den-link">Join the Group →</a></div>
       </div>
       <div class="den">
         <span class="den-tag">Daily features</span>
-        <div class="den-photo"><img src="assets/huskiesofficial-profile-16x9.png" alt="A husky mom surrounded by her five puppies on green grass" loading="lazy" decoding="async" /></div>
+        <div class="den-photo"><img src="assets/huskiesofficial-profile-16x9.jpg" alt="A husky mom surrounded by her five puppies on green grass" loading="lazy" decoding="async" /></div>
         <div class="den-body"><h3>The Facebook Page</h3><p>The best of the community in front of 143,000+ followers — member spotlights, weekly rituals, and Feature Friday winners.</p><a href="https://facebook.com/HuskiesOfficial" target="_blank" rel="noopener" class="den-link">Follow the Page →</a></div>
       </div>
       <div class="den">
         <span class="den-tag">Reels & zoomies</span>
-        <div class="den-photo"><img src="assets/huskiesofficial-profile-16x9.png" alt="Husky mom and puppies piled together on grass" loading="lazy" decoding="async" /></div>
+        <div class="den-photo"><img src="assets/huskiesofficial-profile-16x9.jpg" alt="Husky mom and puppies piled together on grass" loading="lazy" decoding="async" /></div>
         <div class="den-body"><h3>Instagram</h3><p>Pure visual chaos: zoomies, talk-offs, and blue-eyed portraits from pack members worldwide.</p><a href="https://instagram.com/huskies_official" target="_blank" rel="noopener" class="den-link">Follow on Instagram →</a></div>
       </div>
     </div>
@@ -271,7 +271,7 @@
 <!-- FOOTER -->
 <footer class="footer">
   <div class="wrap">
-    <a href="#top" class="brand"><img class="brand-mark" src="assets/huskiesofficial-mark.png" alt="" /><span class="brand-text">HUSKIES<span class="official">OFFICIAL</span></span></a>
+    <a href="#top" class="brand"><img class="brand-mark" src="assets/huskiesofficial-mark.png" alt="" loading="lazy" decoding="async" /><span class="brand-text">HUSKIES<span class="official">OFFICIAL</span></span></a>
     <div class="footer-nav">
       <a href="#cheatsheet">Cheat Sheet</a>
       <a href="#community">Community</a>
@@ -345,11 +345,15 @@ document.querySelectorAll('form[data-capture]').forEach(function(form){
     var email=input.value.trim();
     var firstName=nameInput?nameInput.value.trim():'';
     var hp=form.querySelector('[name="hp_field"]');
+    form.querySelectorAll('.form-err').forEach(function(n){n.remove();});
     // Honeypot: real people never fill this hidden field — bots do. Fake success, send nothing.
     if(hp&&hp.value){showSuccess();return;}
-    if(!firstName){nameInput.focus();return;}
-    if(!/.+@.+\..+/.test(email)){input.focus();return;}
-    form.querySelectorAll('.form-err').forEach(function(n){n.remove();});
+    function showFieldError(msg,field){
+      form.insertAdjacentHTML('beforeend','<p class="form-err">'+msg+'</p>');
+      field.focus();
+    }
+    if(!firstName){showFieldError('Enter your first name.',nameInput);return;}
+    if(!/.+@.+\..+/.test(email)){showFieldError('Enter a valid email address.',input);return;}
 
     function showSuccess(){
       form.insertAdjacentHTML('afterend','<div class="success" role="status" aria-live="polite"><span class="check">✓</span><div><strong>Welcome to the pack!</strong><p>Check your inbox and confirm your email — your Cheat Sheet arrives the moment you do.</p></div></div>');
@@ -392,6 +396,7 @@ document.querySelectorAll('[data-notify]').forEach(function(btn){
       if(fn)setTimeout(function(){fn.focus();},650);
     }
     btn.textContent='Add your email above ↑';
+    btn.classList.add('on');
   });
 });
 
