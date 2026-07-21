@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TGG1J96M3M"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TGG1J96M3M');
+</script>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>HuskiesOfficial — 250,000+ Husky People Strong</title>
@@ -378,13 +386,17 @@ document.querySelectorAll('form[data-capture]').forEach(function(form){
       body:JSON.stringify({email_address:email,first_name:firstName,fields:{source:source?source.value:'direct'}})
     })
     .then(function(r){return r.ok?r.json():Promise.reject();})
-    .then(showSuccess)
+    .then(function(){
+      if(window.gtag)gtag('event','generate_lead',{source:source?source.value:'direct'});
+      showSuccess();
+    })
     .catch(showError);
   });
 });
 document.querySelectorAll('[data-notify]').forEach(function(btn){
   btn.addEventListener('click',function(){
     var product=btn.getAttribute('data-product')||'product';
+    if(window.gtag)gtag('event','notify_signup',{product:product});
     var join=document.getElementById('join');
     var src=join&&join.querySelector('[data-source]');
     if(src)src.value='notify-'+product;
